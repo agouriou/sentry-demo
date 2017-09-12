@@ -12,8 +12,8 @@ export class ErrorComponent implements OnInit {
   ngOnInit() {
   }
 
-  throwError(){
-    throw new Error('Hahaha error!!');
+  throwError() {
+    throw new Error('critical error!!');
   }
 
 }
