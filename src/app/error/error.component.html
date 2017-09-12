@@ -2,4 +2,7 @@
   error works!
 </p>
 
+<input [(ngModel)]="errorMessage" />
 <input type="button" (click)="throwError()" value="Throw critical error!!!"/>
+<input type="button" (click)="throwOtherError()" value="Throw other error!!!"/>
+<input type="button" (click)="throwOtherOtherError()" value="Throw other other error!!!"/>
