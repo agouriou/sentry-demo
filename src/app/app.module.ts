@@ -1,8 +1,10 @@
 import { ErrorService } from './error/error.service';
 import * as Raven from 'raven-js';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ErrorHandler, NgModule} from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MdInputModule, MdButtonModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { ErrorComponent } from './error/error.component';
@@ -28,11 +30,14 @@ export class RavenErrorHandler implements ErrorHandler {
   ],
   imports: [
     BrowserModule,
-      FormsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    MdInputModule,
+    MdButtonModule
   ],
   providers: [
-      ErrorService,
-      {provide: ErrorHandler, useClass: RavenErrorHandler}
+    ErrorService,
+    { provide: ErrorHandler, useClass: RavenErrorHandler }
   ],
   bootstrap: [AppComponent]
 })

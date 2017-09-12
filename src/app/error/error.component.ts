@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ErrorComponent implements OnInit {
 
-  errorMessage = 'critical error';
+  errorMessage: string;
 
-  constructor(private errorService: ErrorService) { }
+  constructor(private errorService: ErrorService) {}
 
   ngOnInit() {
   }

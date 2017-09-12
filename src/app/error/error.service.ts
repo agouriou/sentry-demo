@@ -4,14 +4,14 @@ import { Injectable } from '@angular/core';
 export class ErrorService {
 
   throwError(msg: string) {
-    throw new Error(msg);
+    throw new Error(msg || 'error');
   }
 
   throwTypeError(msg: string) {
-    throw new ReferenceError(msg);
+    throw new ReferenceError(msg || 'reference error');
   }
 
   throwReferenceError(msg: string) {
-    throw new TypeError(msg);
+    throw new TypeError(msg || 'type error');
   }
 }

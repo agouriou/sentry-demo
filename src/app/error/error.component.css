@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+  flex-basis: 40%;
+  flex-direction: column;
+}
+
+.error-button {
+  margin: 10px 0;
+}
+
+md-form-field {
+  width: 100%;
+}
+
+form {
+  margin-bottom: 30px;
+}

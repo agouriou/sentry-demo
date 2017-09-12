@@ -1,8 +1,9 @@
-<p>
-  error works!
-</p>
+<form>
+  <md-form-field>
+    <input mdInput [(ngModel)]="errorMessage" placeholder="Custom error message" name="error" />
+  </md-form-field>
+</form>
 
-<input [(ngModel)]="errorMessage" />
-<input type="button" (click)="throwError()" value="Throw critical error!!!"/>
-<input type="button" (click)="throwOtherError()" value="Throw other error!!!"/>
-<input type="button" (click)="throwOtherOtherError()" value="Throw other other error!!!"/>
+<button md-raised-button (click)="throwError()" class="error-button">Throw critical error!!!</button>
+<button md-raised-button (click)="throwOtherError()" class="error-button">Throw other error!!!</button>
+<button md-raised-button (click)="throwOtherOtherError()" class="error-button">Throw other other error!!!</button>
