@@ -1,10 +1,11 @@
+import { ErrorService } from './error/error.service';
 import * as Raven from 'raven-js';
 import { BrowserModule } from '@angular/platform-browser';
 import {ErrorHandler, NgModule} from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ErrorComponent } from './error/error.component';
-import {FormsModule} from "@angular/forms";
 
 Raven
     .config('https://12f96595f52d46b1beaaf085d3c5abe6@sentry.io/215970', <any>{
@@ -30,6 +31,7 @@ export class RavenErrorHandler implements ErrorHandler {
       FormsModule
   ],
   providers: [
+      ErrorService,
       {provide: ErrorHandler, useClass: RavenErrorHandler}
   ],
   bootstrap: [AppComponent]

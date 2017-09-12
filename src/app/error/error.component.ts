@@ -1,3 +1,4 @@
+import { ErrorService } from './error.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,21 +10,21 @@ export class ErrorComponent implements OnInit {
 
   errorMessage = 'critical error';
 
-  constructor() { }
+  constructor(private errorService: ErrorService) { }
 
   ngOnInit() {
   }
 
   throwError() {
-    throw new Error(this.errorMessage);
+    this.errorService.throwError(this.errorMessage);
   }
 
-    throwOtherError(){
-        throw new Error(this.errorMessage);
-    }
+  throwOtherError() {
+    this.errorService.throwReferenceError(this.errorMessage);
+  }
 
-    throwOtherOtherError(){
-        throw new Error(this.errorMessage);
-    }
+  throwOtherOtherError() {
+    this.errorService.throwTypeError(this.errorMessage);
+  }
 
 }
